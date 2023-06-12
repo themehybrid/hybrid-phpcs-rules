@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+/**
+ * PHP Code Beautifier and Fixer fixes violations of a defined coding standard.
+ * This version is for https://github.com/okonet/lint-staged, which requires
+ * all success exit codes to complete its mission.
+ *
+ * @see https://github.com/squizlabs/PHP_CodeSniffer/blob/master/bin/phpcbf
+ * @see https://github.com/squizlabs/PHP_CodeSniffer/issues/1359
+ */
+
+if (is_file(__DIR__.'/../../../squizlabs/php_codesniffer/autoload.php') === true) {
+    include_once __DIR__.'/../../../squizlabs/php_codesniffer/autoload.php';
+} elseif (is_file(__DIR__.'/../vendor/squizlabs/php_codesniffer/autoload.php') === true) {
+    include_once __DIR__.'/../vendor/squizlabs/php_codesniffer/autoload.php';
+} else {
+    include_once 'PHP/CodeSniffer/autoload.php';
+}
+
+$runner   = new PHP_CodeSniffer\Runner();
+$exitCode = $runner->runPHPCBF();
+
+if ( 1 === $exitCode ){
+    $exitCode = 0;
+}
+
+exit($exitCode);

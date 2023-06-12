@@ -1,0 +1,22 @@
+{
+  "name": "themehybrid/hybrid-phpcs-rules",
+  "description": "PHP CS coding standards for ThemeHybrid projects.",
+  "type": "phpcodesniffer-standard",
+  "bin": [
+    "bin/phpcbf-fix-exit-0"
+  ],
+  "require": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "sirbrillig/phpcs-variable-analysis": "^v2.10.1",
+    "wp-coding-standards/wpcs": "dev-develop",
+    "slevomat/coding-standard": "^8.4.0"
+  },
+  "scripts": {
+    "post-install-cmd": "\"vendor/bin/phpcs\" --config-set default_standard ThemeHybrid"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
