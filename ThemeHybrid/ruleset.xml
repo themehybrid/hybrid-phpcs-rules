@@ -177,9 +177,6 @@
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint"/>
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint"/>
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint"/>
-        <!-- This sniff is unusable as it doesn't check whether it's the last condition in a method -->
-        <!-- Not something we do in ThemeHybrid, might utilize in future -->
-        <exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit.EarlyExitNotUsed"/>
 		<!-- Using ::class on variables is only supported in PHP 8.0 and higher. -->
 		<!-- Class name resolution via `::class` MUST be used instead of
 		 `__CLASS__`, `get_class()`, `get_class($this)`,
@@ -187,12 +184,17 @@
 		<!-- In case some projects forcibly use PHP 7.4, it would break the code,
 		so excluding it for now -->
 		<exclude name="SlevomatCodingStandard.Classes.ModernClassNameReference.ClassNameReferencedViaFunctionCall"/>
+        <!-- It's causing issues with various arrays where order is crucial, so for `hybrid-core` disabling it. -->
+        <exclude name="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys.IncorrectKeyOrder"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit">
         <properties>
             <property name="ignoreOneLineTrailingIf" value="true"/>
         </properties>
+        <!-- This sniff is unusable as it doesn't check whether it's the last condition in a method -->
+        <!-- Not something we do in ThemeHybrid, might utilize in future -->
+        <exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit.EarlyExitNotUsed"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard.Functions.ArrowFunctionDeclaration">
