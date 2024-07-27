@@ -6,10 +6,10 @@
     "bin/phpcbf-fix-exit-0"
   ],
   "require": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-    "sirbrillig/phpcs-variable-analysis": "^v2.10.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7 || ^1.0",
+    "sirbrillig/phpcs-variable-analysis": "^v2.11.9",
     "wp-coding-standards/wpcs": "dev-develop",
-    "slevomat/coding-standard": "^8.4.0"
+    "slevomat/coding-standard": "^8.15.0"
   },
   "scripts": {
     "post-install-cmd": "\"vendor/bin/phpcs\" --config-set default_standard ThemeHybrid"
