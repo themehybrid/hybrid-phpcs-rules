@@ -1,0 +1,2 @@
+- Watch: https://github.com/WordPress/WordPress-Coding-Standards/milestone/32 for PHPCS v4 support
+- Will support https://github.com/slevomat/coding-standard/releases/tag/8.23.0 above once WCS supports PHPCS v4
